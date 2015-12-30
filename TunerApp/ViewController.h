@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface ViewController : UIViewController {
+    IBOutlet UILabel *freqLabel;
+    
+    NSInteger iFreq;
+}
+- (IBAction)buttonTestMe;
 @end
 
