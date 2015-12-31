@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AudioController.h"
+#import "PitchDetector.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <AudioControllerDelegate> {
     IBOutlet UILabel *freqLabel;
     
     NSInteger iFreq;
+    
+    AudioController *audioManager;
+    PitchDetector *autoCorrelator;
+    
+    NSMutableArray *medianPitchFollow;
 }
 - (IBAction)buttonTestMe;
 @end

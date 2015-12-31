@@ -16,6 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Init the audio manager and set delegate.  This will open the audio device and start recording.
+    audioManager = [AudioController sharedAudioManager];
+    audioManager.delegate = self;
+    
     iFreq = 0;
     freqLabel.text = @"Freq: 0";
 }
@@ -31,4 +36,8 @@
     freqLabel.text = [NSString stringWithFormat:@"Freq: %i", iFreq];
 }
 
+
+- (void) receivedAudioSamples:(SInt16 *)samples length:(int)len {
+    [autoCorrelator addSamples:samples inNumberFrames:len];
+}
 @end
