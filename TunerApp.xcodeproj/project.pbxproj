@@ -15,6 +15,10 @@
 		55AF459F1C3449E40019A08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AF459D1C3449E40019A08E /* LaunchScreen.storyboard */; };
 		55AF45AA1C3449E40019A08E /* TunerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF45A91C3449E40019A08E /* TunerAppTests.m */; };
 		55AF45B51C3449E40019A08E /* TunerAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF45B41C3449E40019A08E /* TunerAppUITests.m */; };
+		55AF45C41C3577C60019A08E /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF45C31C3577C60019A08E /* PitchDetector.m */; };
+		55AF45C71C3577D20019A08E /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF45C61C3577D20019A08E /* AudioController.m */; };
+		55AF45C91C3578210019A08E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AF45C81C3578210019A08E /* Accelerate.framework */; };
+		55AF45CB1C35782E0019A08E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AF45CA1C35782E0019A08E /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		55AF45B01C3449E40019A08E /* TunerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AF45B41C3449E40019A08E /* TunerAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunerAppUITests.m; sourceTree = "<group>"; };
 		55AF45B61C3449E40019A08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55AF45C21C3577C60019A08E /* PitchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchDetector.h; sourceTree = "<group>"; };
+		55AF45C31C3577C60019A08E /* PitchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PitchDetector.m; sourceTree = "<group>"; };
+		55AF45C51C3577D20019A08E /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		55AF45C61C3577D20019A08E /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		55AF45C81C3578210019A08E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		55AF45CA1C35782E0019A08E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AF45CB1C35782E0019A08E /* AudioToolbox.framework in Frameworks */,
+				55AF45C91C3578210019A08E /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +93,8 @@
 		55AF45831C3449E40019A08E = {
 			isa = PBXGroup;
 			children = (
+				55AF45CA1C35782E0019A08E /* AudioToolbox.framework */,
+				55AF45C81C3578210019A08E /* Accelerate.framework */,
 				55AF458E1C3449E40019A08E /* TunerApp */,
 				55AF45A81C3449E40019A08E /* TunerAppTests */,
 				55AF45B31C3449E40019A08E /* TunerAppUITests */,
@@ -101,6 +115,10 @@
 		55AF458E1C3449E40019A08E /* TunerApp */ = {
 			isa = PBXGroup;
 			children = (
+				55AF45C51C3577D20019A08E /* AudioController.h */,
+				55AF45C61C3577D20019A08E /* AudioController.m */,
+				55AF45C21C3577C60019A08E /* PitchDetector.h */,
+				55AF45C31C3577C60019A08E /* PitchDetector.m */,
 				55AF45921C3449E40019A08E /* AppDelegate.h */,
 				55AF45931C3449E40019A08E /* AppDelegate.m */,
 				55AF45951C3449E40019A08E /* ViewController.h */,
@@ -270,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AF45C71C3577D20019A08E /* AudioController.m in Sources */,
+				55AF45C41C3577C60019A08E /* PitchDetector.m in Sources */,
 				55AF45971C3449E40019A08E /* ViewController.m in Sources */,
 				55AF45941C3449E40019A08E /* AppDelegate.m in Sources */,
 				55AF45911C3449E40019A08E /* main.m in Sources */,
@@ -498,6 +518,7 @@
 				55AF45BB1C3449E40019A08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55AF45BC1C3449E40019A08E /* Build configuration list for PBXNativeTarget "TunerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +527,7 @@
 				55AF45BE1C3449E40019A08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55AF45BF1C3449E40019A08E /* Build configuration list for PBXNativeTarget "TunerAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +536,7 @@
 				55AF45C11C3449E40019A08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
