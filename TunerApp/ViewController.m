@@ -17,9 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Init the audio manager and set delegate.  This will open the audio device and start recording.
+    // Init the audio manager and set delegate.  This will open the audio device, start recording which sends
+    // buffers to receivedAudioSamples
     audioManager = [AudioController sharedAudioManager];
     audioManager.delegate = self;
+    
+    // Setup the signal analysis.
+    // Set which frequencies to look at:
+    //    - Low open B on a 5 string bass is ~30Hz (B0)
+    //    - Highest note on a guitar in standard tuning is about 1400Hz (F6)
+    //    - But a lot of people like to tune with upper harmonics which can get to 4500Hz (C#8)
+    autoCorrelator = [[PitchDetector alloc]
+                      initWithSampleRate:audioManager.audioFormat.mSampleRate
+                      lowBoundFreq:30
+                      hiBoundFreq:4500
+                      andDelegate:self];
     
     iFreq = 0;
     freqLabel.text = @"Freq: 0";
