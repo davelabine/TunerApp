@@ -10,6 +10,10 @@
 #import "AudioController.h"
 #import "PitchDetector.h"
 
+
+// Track about 22 frequencies in the median filter, this means we're tracking the median of the signal for the last second or so.
+static const int MEDIAN_PITCH_FOLLOW_SIZE = 22;
+
 @interface ViewController : UIViewController <AudioControllerDelegate> {
     IBOutlet UILabel *freqLabel;
     
@@ -21,5 +25,6 @@
     NSMutableArray *medianPitchFollow;
 }
 - (IBAction)buttonTestMe;
+
 @end
 

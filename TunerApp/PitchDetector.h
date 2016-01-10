@@ -7,7 +7,20 @@
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 #import <Foundation/Foundation.h>
+
+/* David LaBine Jan 2016
+ Set some handy constants to make this more readable.
+ A useful table = http://www.seventhstring.com/resources/notefrequencies.html
+ */
+ 
+ // Low open B on a 5 string bass is ~30Hz (B0)
+ static const int TUNER_LOW_BOUND_FREQ = 30;
+ 
+ // Highest note on a guitar in standard tuning is about 1400Hz (F6)
+ // But a lot of people like to tune with upper harmonics which can get to 4500Hz (C#8)
+ static const int TUNER_HI_BOUND_FREQ = 4500;
 
 @protocol PitchDetectorDelegate <NSObject>
 - (void) updatedPitch: (float) frequency;
